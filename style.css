@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0; min-height: 100vh;
+}
+.wrapper{
+    max-width: 1200px; margin: auto; padding-left: 10px; padding-right: 10px;
+}
+
+/* Header */
+.header-cont{
+    display: flex; justify-content: space-between; align-items: center; border: 1px solid;
+}
+.hC-left > h1{
+    margin: 0 0 0 5px; transform: translateY(-30px);
+}
+/* Top Navigation */
+.top-nav > ul{
+    list-style-type: none;
+}
+.top-nav > ul > li{
+    display: inline-block;
+}
+.top-nav > ul > li a:link, .top-nav > ul > li a:visited{
+    display: inline-block; text-decoration: none; padding: 10px;
+}
+.top-nav > ul > li a:hover, #products-btn:hover{
+    background-color: blue; color: white;
+}
+#products-btn{
+    position: relative; padding: 10px;
+}
+#products-options{
+    position: absolute; right: 0; background-color: whitesmoke; display: none; transform: translateY(10px); padding-top: 15px; height: 120px; text-align: right; width: 150px; box-shadow: 0 0 5px gray;
+}
+#products-options a:link, #products-options a:visited{
+    display: block;
+}
+#products-btn:hover #products-options{
+    display: block;
+}
+
+/* Hamburger Nav icon*/
+.hamburger{
+    width: 35px; height: 30px; cursor: pointer; margin-left: auto; display: none;
+}
+.hamburger > div{
+    width: 35px; height: 4px; background-color: black; transition: all 0.4s ease; margin-top: 6px;
+}
+.h-change .bar1{
+    transform: rotate(-45deg) translate(-7px, 7px);
+}
+.h-change .bar2{
+    opacity: 0;
+}
+.h-change .bar3{
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+.tnc-toggle{
+    display: block !important;
+}
+
+
+/* Media Screen */
+@media screen and (max-width: 767px){
+    .top-nav-content{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .top-nav > ul > li{
+        display: block;
+    }
+}
