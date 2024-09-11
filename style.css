@@ -16,26 +16,26 @@ body{
     margin: 0 0 0 5px; transform: translateY(-30px);
 }
 /* Top Navigation */
-.top-nav > ul{
-    list-style-type: none;
+nav ul{
+    list-style-type: none; padding: 0; margin: 0; transition: all 0.5s;
 }
-.top-nav > ul > li{
+nav ul li{
     display: inline-block;
 }
-.top-nav > ul > li a:link, .top-nav > ul > li a:visited{
+nav ul li > a:link, nav ul li > a:visited{
     display: inline-block; text-decoration: none; padding: 10px;
 }
-.top-nav > ul > li a:hover, #products-btn:hover{
+#products-btn{
+    padding: 10px; position: relative;
+}
+nav ul li > a:hover, #products-btn:hover, #products-options > a:hover{
     background-color: blue; color: white;
 }
-#products-btn{
-    position: relative; padding: 10px;
-}
 #products-options{
-    position: absolute; right: 0; background-color: whitesmoke; display: none; transform: translateY(10px); padding-top: 15px; height: 120px; text-align: right; width: 150px; box-shadow: 0 0 5px gray;
+    display: none; position: absolute; right: 0; top: 39px; background-color: gray; padding: 20px 0; width: 150px; text-align: right; z-index: 1;
 }
-#products-options a:link, #products-options a:visited{
-    display: block;
+#products-options > a:link{
+    display: block; text-decoration: none; padding: 10px 20px;
 }
 #products-btn:hover #products-options{
     display: block;
@@ -58,19 +58,36 @@ body{
     transform: rotate(45deg) translate(-7px, -7px);
 }
 .tnc-toggle{
-    display: block !important;
+    width: 200px !important; height: 300px !important;
 }
 
 
 /* Media Screen */
-@media screen and (max-width: 767px){
-    .top-nav-content{
-        display: none;
+@media screen and (min-width: 768px){
+    .tnc-toggle{
+        width: auto !important; height: auto !important;
     }
-    .hamburger{
+    nav ul li {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 767px){
+    nav{
+        position: relative;
+    }
+    nav ul{
+        position: absolute; right: 0; top: 40px; background-color: red; width: 0; height: 0; text-align: right; overflow: auto;
+    }
+    nav ul li {
         display: block;
     }
-    .top-nav > ul > li{
+    nav ul li:first-child{
+        margin-top: 20px;
+    }
+    nav ul li > a:link, nav ul li > a:visited, #products-btn{
+        color: white;
+    }
+    .hamburger{
         display: block;
     }
 }
