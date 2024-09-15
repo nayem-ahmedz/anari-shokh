@@ -10,7 +10,7 @@ body{
 
 /* Header */
 .header-cont{
-    display: flex; justify-content: space-between; align-items: center; border: 1px solid;
+    display: flex; justify-content: space-between; align-items: center;
 }
 .hC-left > h1{
     margin: 0 0 0 5px; transform: translateY(-30px);
@@ -59,6 +59,22 @@ nav ul li > a:hover, #products-btn:hover, #products-options > a:hover{
 }
 .tnc-toggle{
     width: 200px !important; height: 300px !important;
+}
+
+/* Main Section */
+.home-front{
+    display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap; padding: 100px 10px 30px;
+}
+
+/* Article : Trending Products */
+article{
+    text-align: center; margin-top: 50px !important;
+}
+.col-4{
+    display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.col-4 > div{
+    height: 300px; flex-basis: 250px; background-color: #eee;
 }
 
 
