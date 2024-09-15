@@ -2,18 +2,24 @@
     box-sizing: border-box;
 }
 body{
-    margin: 0; min-height: 100vh;
+    margin: 0; min-height: 100vh; background-color: #eee;
 }
 .wrapper{
-    max-width: 1200px; margin: auto; padding-left: 10px; padding-right: 10px;
+    max-width: 1300px; margin: auto; padding-left: 10px; padding-right: 10px;
 }
 
 /* Header */
+header{
+    position: fixed; top: 0; width: 100%; background-color: #eee;
+}
 .header-cont{
     display: flex; justify-content: space-between; align-items: center;
 }
+.top-logo{
+    width: 130px; height: 130px;
+}
 .hC-left > h1{
-    margin: 0 0 0 5px; transform: translateY(-30px);
+    margin: 0 0 0 5px; transform: translateY(-50px); display: inline-block; font-family: calibri; cursor: pointer; font-size: 2.75rem; color: rgb(123, 59, 35);
 }
 /* Top Navigation */
 nav ul{
@@ -22,20 +28,23 @@ nav ul{
 nav ul li{
     display: inline-block;
 }
-nav ul li > a:link, nav ul li > a:visited{
-    display: inline-block; text-decoration: none; padding: 10px;
+nav ul li > a:link, nav ul li > a:visited, #products-btn{
+    display: inline-block; text-decoration: none; padding: 10px; border-radius: 10px; font-family: calibri; font-weight: 600; font-size: 1.2rem;
 }
 #products-btn{
-    padding: 10px; position: relative;
+    position: relative;
 }
 nav ul li > a:hover, #products-btn:hover, #products-options > a:hover{
-    background-color: blue; color: white;
+    background-color: rgb(123, 59, 35); color: white;
 }
 #products-options{
-    display: none; position: absolute; right: 0; top: 39px; background-color: gray; padding: 20px 0; width: 150px; text-align: right; z-index: 1;
+    display: none; position: absolute; right: 0; top: 39px; background-color: white; padding: 20px 0; width: 150px; text-align: right; z-index: 1; border-radius: 10px;
 }
 #products-options > a:link{
-    display: block; text-decoration: none; padding: 10px 20px;
+    display: block; text-decoration: none; padding: 10px 20px; color: black;
+}
+#products-options > a:hover{
+    color: white;
 }
 #products-btn:hover #products-options{
     display: block;
@@ -58,12 +67,18 @@ nav ul li > a:hover, #products-btn:hover, #products-options > a:hover{
     transform: rotate(45deg) translate(-7px, -7px);
 }
 .tnc-toggle{
-    width: 200px !important; height: 300px !important;
+    width: 200px !important; height: 380px !important;
 }
 
 /* Main Section */
+main{
+    margin-top: 140px;
+}
 .home-front{
-    display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap; padding: 100px 10px 30px;
+    display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap; padding: 80px 10px 30px;
+}
+.main-top-video{
+    max-width: 600px; height: auto;
 }
 
 /* Article : Trending Products */
@@ -71,14 +86,22 @@ article{
     text-align: center; margin-top: 50px !important;
 }
 .col-4{
-    display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;
+    display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;
 }
 .col-4 > div{
-    height: 300px; flex-basis: 250px; background-color: #eee;
+    height: 300px; flex-basis: 250px; background-color: gray; border-radius: 10px;
 }
 
 
 /* Media Screen */
+@media screen and (max-width: 1024px){
+    .hC-left > h1{
+        font-size: 2.5rem;
+    }
+    .main-top-video{
+        width: 100%;
+    }
+}
 @media screen and (min-width: 768px){
     .tnc-toggle{
         width: auto !important; height: auto !important;
@@ -88,11 +111,14 @@ article{
     }
 }
 @media screen and (max-width: 767px){
+    .hC-left > h1{
+        font-size: 2rem;
+    }
     nav{
         position: relative;
     }
     nav ul{
-        position: absolute; right: 0; top: 40px; background-color: red; width: 0; height: 0; text-align: right; overflow: auto;
+        position: absolute; right: 0; top: 40px; background-color: whitesmoke; width: 0; height: 0; text-align: right; overflow: auto; z-index: 1;
     }
     nav ul li {
         display: block;
@@ -101,9 +127,23 @@ article{
         margin-top: 20px;
     }
     nav ul li > a:link, nav ul li > a:visited, #products-btn{
+        color: black;
+    }
+    nav ul li > a:hover{
         color: white;
     }
     .hamburger{
         display: block;
+    }
+}
+@media screen and (max-width: 600px){
+    .hC-left{
+        transform: translateX(-28px);
+    }
+    .hC-left > h1{
+        margin: 0; transform: translate(-15px, -50px);
+    }
+    .home-front{
+        padding-top: 50px;
     }
 }
